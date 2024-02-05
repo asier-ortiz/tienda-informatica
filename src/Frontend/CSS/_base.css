@@ -1,0 +1,19 @@
+:root {
+    --color-primary: #6699CC;
+    --color-secondary: #009AB7;
+    --color-secondary-opacity: rgba(93, 193, 185, .7);
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Roboto Light', sans-serif;
+    box-sizing: border-box;
+    font-weight: 400;
+}

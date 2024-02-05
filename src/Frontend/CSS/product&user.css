@@ -1,0 +1,194 @@
+@import "_base.css";
+@import "_header.css";
+@import "_footer.css";
+
+
+main {
+    position: relative;
+    height: 100vh;
+    grid-template-rows: 100px 100px 350px 400px 100px;
+    grid-template-columns: repeat(4, 1fr);
+    display: grid;
+    grid-template-areas:
+            "header header header header"
+            "nav nav nav nav"
+            "table table table table"
+            "form form form form"
+            "footer footer footer footer";
+    column-gap: 5px;
+}
+
+
+/* NAVIGATION */
+nav {
+    grid-area: nav;
+    margin-top: 5px;
+}
+
+ul.breadcrumb {
+    margin: 0 auto;
+    padding: 10px 16px;
+    list-style: none;
+    background-color: var(--color-secondary-opacity);
+}
+
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+
+ul.breadcrumb li + li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+
+
+/* TABLE */
+.table-section {
+    grid-area: table;
+}
+
+.table-wrapper {
+    overflow: scroll;
+    max-height: 325px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table, td, th {
+    border: 1px solid gray;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+thead {
+    position: sticky;
+    top: -1px;
+}
+
+tr {
+    background: #CCC;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--color-primary);
+    color: white;
+}
+
+td, th {
+    text-align: center;
+}
+
+td:first-child {
+    font-weight: bold;
+}
+
+
+/* FORM */
+#productForm,
+#userForm {
+    grid-area: form;
+    background: var(--color-primary);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.from-fields-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 450px;
+}
+
+.form-col:first-child {
+    grid-column: 1/2;
+}
+
+.form-col:nth-child(2) {
+    grid-column: 2/3;
+}
+
+.form-row {
+    margin-bottom: 5px;
+    margin-right: 5px;
+    min-height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+/* TYPOGRAPHY */
+h2 {
+    margin-top: 0;
+    padding-left: 10px;
+    background: #ffff;
+    min-height: 50px;
+}
+
+small.warning {
+    color: red;
+}
+
+p.warning {
+    background-color: red;
+    color: black;
+    text-align: center;
+    width: 100%;
+}
+
+
+/* OTHER*/
+input,
+#type {
+    margin-top: 5px;
+}
+
+#type,
+#discount {
+    width: 150px;
+}
+
+.center {
+    position: absolute;
+    top: 87%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#btn--add_product,
+#btn--add_user {
+    min-height: 50px;
+    padding: 20px;
+}
+
+button {
+    cursor: pointer;
+}

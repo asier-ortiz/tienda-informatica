@@ -1,0 +1,213 @@
+@import "_base.css";
+@import "_header.css";
+@import "_footer.css";
+
+
+main {
+    position: relative;
+    grid-template-rows: 100px 100px 450px 100px;
+    grid-template-columns: repeat(4, 1fr);
+    display: grid;
+    grid-template-areas:
+            "header header header header"
+            "nav nav nav nav"
+            "wrapper wrapper wrapper wrapper"
+            "footer footer footer footer";
+    column-gap: 5px;
+}
+
+
+/* CONTENT-WRAPPER */
+.content-wrapper {
+    grid-area: wrapper;
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-template-areas:
+            "table table cart";
+    column-gap: 10px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    main {
+        grid-template-rows: 100px 100px 1000px 100px;
+    }
+
+    aside {
+        margin-top: 50px;
+    }
+}
+
+
+/* NAVIGATION */
+nav {
+    grid-area: nav;
+    margin-top: 5px;
+}
+
+ul.breadcrumb {
+    margin: 0 auto;
+    padding: 10px 16px;
+    list-style: none;
+    background-color: var(--color-secondary-opacity);
+}
+
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+
+ul.breadcrumb li + li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+
+
+/* TABLE */
+.table-section {
+    grid-area: table;
+}
+
+.table-wrapper {
+    overflow: scroll;
+    max-height: 400px;
+}
+
+.table-wrapper > table {
+    border-collapse: collapse;
+    width: 100%;
+
+    margin-bottom: 15px;
+}
+
+table, td, th {
+    border: 1px solid gray;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+thead {
+    position: sticky;
+    top: -1px;
+}
+
+table:last-child {
+    border: none;
+}
+
+tfoot > tr > td {
+    padding: 15px 10px;
+    border: none;
+    background-color: var(--color-secondary-opacity);
+}
+
+tfoot > tr > td:last-child {
+    font-weight: bold;
+}
+
+tr {
+    background: #CCC
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--color-primary);
+    color: white;
+}
+
+td, th {
+    text-align: center;
+}
+
+td:first-child {
+    font-weight: bold;
+}
+
+
+/* ASIDE */
+aside {
+    grid-area: cart;
+    max-height: 400px;
+    position: relative;
+}
+
+aside > p {
+    text-align: center;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-bottom: 100px;
+    padding: 20px;
+}
+
+aside > table {
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+#orderForm > button {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    transform: translate(-50%, -50%);
+    height: 60px;
+    width: 80px;
+    color: white;
+    background-color: rgba(255, 127, 80, .9);
+    border: dotted;
+    text-transform: uppercase;
+}
+
+#orderForm > button:hover {
+    transform: translate(-50%, -50%) scale(1.1)
+}
+
+
+/* TYPOGRAPHY */
+h1 {
+    font-size: 40px;
+    width: 100%;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 0;
+    background: #ffff;
+    min-height: 50px;
+}
+
+caption {
+    text-align: start;
+}
+
+caption > h2 {
+    margin-bottom: 0;
+}
+
+
+/* OTHER */
+button {
+    cursor: pointer;
+}

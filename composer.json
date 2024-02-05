@@ -1,0 +1,22 @@
+{
+    "name": "asierortizgarcia/ud05te01",
+    "description": "UD05TE01",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Backend\\": "src/Backend"
+        }
+    },
+    "require": {
+      "ext-pdo": "*",
+      "vlucas/phpdotenv": "^5.4",
+      "econea/nusoap": "^0.9.11"
+    },
+    "license": "propietary",
+    "authors": [
+        {
+            "name": "Asier Ortiz",
+            "email": "aortiz@birt.eus"
+        }
+    ]
+}

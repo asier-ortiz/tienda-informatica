@@ -1,0 +1,247 @@
+@import "_base.css";
+@import "_header.css";
+@import "_footer.css";
+
+main {
+    position: relative;
+    height: 100vh;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 100px 100px auto 100px;
+    display: grid;
+    grid-template-areas:
+            "header header header header"
+            "nav nav nav nav"
+            "wrapper wrapper wrapper wrapper"
+            "footer footer footer footer";
+}
+
+
+/* NAVIGATION */
+nav {
+    grid-area: nav;
+    background: var(--color-secondary);
+    position: relative;
+}
+
+nav > ul {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+nav > ul > li {
+    flex-grow: 1;
+    height: 50px;
+}
+
+nav > ul > li > a {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-nav {
+    grid-area: nav;
+    width: 100%;
+    background: #ddd;
+}
+
+
+/* CONTENT-WRAPPER */
+.content-wrapper {
+    grid-area: wrapper;
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-template-areas:
+            "categories categories cart";
+}
+
+@media only screen and (max-width: 800px) {
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.table-content-wrapper {
+    grid-area: wrapper;
+    margin-top: 10px;
+}
+
+.empty-content-wrapper {
+    grid-area: wrapper;
+    background: #ddd;
+}
+
+
+/* SECTION */
+section {
+    grid-area: categories;
+    background: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+}
+
+section > ul > li {
+    padding: 5px;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    line-height: 100px;
+}
+
+
+/* ASIDE */
+aside {
+    grid-area: cart;
+    padding: 5px;
+    position: relative;
+    margin-top: 40px;
+}
+
+aside > p {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /*margin-bottom: 100px;*/
+    padding: 20px;
+}
+
+#orderForm > button {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    transform: translate(-50%, -50%);
+    height: 60px;
+    width: 80px;
+    color: white;
+    background-color: rgba(255, 127, 80, .9);
+    border: dotted;
+    text-transform: uppercase;
+}
+
+#orderForm > button:hover {
+    transform: translate(-50%, -50%) scale(1.1)
+}
+
+
+/* TABLE */
+.table-wrapper {
+    overflow: scroll;
+    max-height: 400px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+table, td, th {
+    border: 1px solid gray;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+table:last-child {
+    border: none;
+}
+
+thead {
+    position: sticky;
+    top: -1px;
+}
+
+tfoot > tr > td {
+    padding: 15px 10px;
+    border: none;
+    background-color: var(--color-secondary-opacity);
+}
+
+tfoot > tr > td:last-child {
+    font-weight: bold;
+}
+
+tr {
+    background: #CCC
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--color-primary);
+    color: white;
+}
+
+td, th {
+    text-align: center;
+}
+
+td:first-child {
+    font-weight: bold;
+}
+
+
+/* TYPOGRAPHY */
+h2 {
+    margin-top: 0;
+    padding-left: 10px;
+    background: #ffff;
+    min-height: 50px;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+caption {
+    text-align: start;
+}
+
+caption > h2 {
+    margin-bottom: 0;
+}
+
+
+/* SHARED*/
+ul {
+    margin: 0 auto;
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+
+ul > li {
+    background: rgba(255, 255, 255, .7);
+    font-size: 16px;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+li:hover {
+    opacity: 0.8;
+}
+
+
+/* OTHER */
+button {
+    cursor: pointer;
+}
